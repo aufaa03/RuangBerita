@@ -1,61 +1,90 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+RuangBerita
+RuangBerita adalah sebuah platform blog atau portal berita modern yang dibangun menggunakan Laravel 11. Aplikasi ini dirancang untuk menyajikan konten seputar teknologi, wawasan pengembangan diri, dan dinamika global yang relevan untuk Anda.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Fitur Utama
+Tampilan Publik: Antarmuka yang bersih dan modern bagi pengguna untuk membaca semua berita yang dipublikasikan.
 
-## About Laravel
+Dashboard Admin: Halaman khusus untuk mengelola seluruh konten website.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Manajemen Post (CRUD): Admin dapat membuat, membaca, memperbarui, dan menghapus post berita dengan mudah.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Manajemen Kategori (CRUD): Kemampuan untuk mengelola kategori berita.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Filter & Pencarian: Fungsionalitas untuk memfilter post berdasarkan kategori dan melakukan pencarian berdasarkan judul.
 
-## Learning Laravel
+Sistem Peran (Roles): Pembatasan akses antara peran Admin dan User biasa.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Desain Responsif: Tampilan yang optimal di berbagai perangkat, lengkap dengan mode Terang & Gelap (Light & Dark).
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Autentikasi Aman: Sistem registrasi dan login yang aman dibangun di atas Laravel Breeze.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Teknologi yang Digunakan
+Backend: Laravel 11, PHP 8.2+
 
-## Laravel Sponsors
+Frontend: Blade, Tailwind CSS, Alpine.js (via Breeze)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Database: MySQL
 
-### Premium Partners
+Autentikasi: Laravel Breeze
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## Instalasi & Konfigurasi
+Berikut adalah langkah-langkah untuk menjalankan proyek ini di lingkungan development lokal.
 
-## Contributing
+Clone Repository
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Bash
 
-## Code of Conduct
+git clone https://github.com/NAMA_USER_ANDA/NAMA_REPO_ANDA.git
+cd NAMA_REPO_ANDA
+Install Dependencies
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Bash
 
-## Security Vulnerabilities
+composer install
+npm install
+Setup Environment
+Salin file .env.example menjadi .env dan konfigurasikan database Anda.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Bash
 
-## License
+cp .env.example .env
+Setelah itu, buka file .env dan atur koneksi database Anda (DB_DATABASE, DB_USERNAME, DB_PASSWORD).
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Generate Application Key
+
+Bash
+
+php artisan key:generate
+Jalankan Migrasi Database
+Perintah ini akan membuat semua tabel yang dibutuhkan di database Anda.
+
+Bash
+
+php artisan migrate
+Compile Aset Frontend
+Jalankan perintah ini dan biarkan tetap berjalan selama development.
+
+Bash
+
+npm run dev
+Jalankan Development Server
+Buka terminal baru dan jalankan perintah ini.
+
+Bash
+
+php artisan serve
+Aplikasi Anda sekarang bisa diakses di http://127.0.0.1:8000.
+
+## Membuat User Admin
+Setelah instalasi, Anda perlu membuat akun admin secara manual.
+
+Registrasi Akun Baru: Buka halaman registrasi di aplikasi Anda dan buat akun baru seperti biasa.
+
+Ubah Role di Database: Buka database Anda (menggunakan phpMyAdmin, TablePlus, dll.), cari user yang baru saja Anda buat di tabel users, dan ubah nilai kolom role dari 'user' menjadi 'admin'.
+
+## Akun Demo (Development)
+Untuk memudahkan proses testing, Anda bisa menggunakan akun berikut setelah Anda membuatnya dan mengubah role-nya menjadi admin.
+
+Email: admin1@gmail.com
+
+Password: admin123
