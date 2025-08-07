@@ -1,4 +1,4 @@
-RuangBerita
+## RuangBerita
 RuangBerita adalah sebuah platform blog atau portal berita modern yang dibangun menggunakan Laravel 11. Aplikasi ini dirancang untuk menyajikan konten seputar teknologi, wawasan pengembangan diri, dan dinamika global yang relevan untuk Anda.
 
 ## Fitur Utama
